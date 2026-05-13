@@ -17,7 +17,8 @@ import {
   Mail,
   MapPin,
   Globe,
-  ExternalLink
+  ExternalLink,
+  Calendar
 } from 'lucide-react';
 import GoogleMap from '../GoogleMap';
 
@@ -245,6 +246,60 @@ export default function CorporateTemplate() {
                   </button>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section id="news" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-4">Latest News & Insights</h2>
+              <p className="text-slate-500">Stay updated with our latest projects and industry thoughts.</p>
+            </div>
+            <button className="hidden md:flex items-center text-blue-600 font-bold hover:text-blue-700 transition-colors uppercase tracking-widest text-sm">
+              Read All Articles <ArrowRight size={16} className="ml-2" />
+            </button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {(COMPANY_DATA as any).news.map((item: any, i: number) => (
+              <motion.article 
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex flex-col group cursor-pointer"
+              >
+                <div className="relative h-64 mb-6 rounded-2xl overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    alt={item.title} 
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-blue-900 text-[10px] font-bold uppercase tracking-widest">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-slate-400 text-xs mb-4">
+                  <Calendar size={14} />
+                  <span>{item.date}</span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                  {item.excerpt}
+                </p>
+                <div className="mt-auto flex items-center text-blue-600 font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                  Read More <ArrowRight size={14} className="ml-2" />
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>

@@ -57,5 +57,31 @@ export const COMPANY_DATA = {
   coordinates: {
     lat: -6.212,
     lng: 106.758
-  }
+  },
+  news: [
+    {
+      id: "n1",
+      date: "May 10, 2024",
+      title: "Adamas Tekno Secures Major IT Integration Project",
+      category: "Company News",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      excerpt: "We are proud to announce our partnership with a leading financial institution to modernize their core infrastructure."
+    },
+    {
+      id: "n2",
+      date: "April 28, 2024",
+      title: "The Future of Hybrid Workspaces in Jakarta",
+      category: "Insights",
+      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
+      excerpt: "Exploring how integrated AV/IT solutions are transforming the modern corporate environment."
+    },
+    {
+      id: "n3",
+      date: "April 15, 2024",
+      title: "New Cybersecurity Standards for B2B Integration",
+      category: "Technical",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+      excerpt: "Understanding the latest zero-trust protocols for secure enterprise resource sharing."
+    }
+  ]
 };
