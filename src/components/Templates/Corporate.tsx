@@ -148,7 +148,7 @@ export default function CorporateTemplate() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24">
+      <section id="about" className="py-24 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2 relative">
@@ -187,22 +187,22 @@ export default function CorporateTemplate() {
             </div>
             
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-slate-900 mb-8">Our Strategic Mission</h2>
-              <p className="text-slate-600 mb-12 leading-relaxed">
+              <h2 className="text-3xl font-bold text-white mb-8">Our Strategic Mission</h2>
+              <p className="text-slate-300 mb-12 leading-relaxed">
                 {COMPANY_DATA.mission}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="p-8 border border-slate-100 rounded-2xl bg-slate-50">
-                  <h4 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                <div className="p-8 border border-white/5 rounded-2xl bg-white/5 backdrop-blur-sm">
+                  <h4 className="font-bold text-blue-400 mb-4 flex items-center gap-2">
                     <Globe size={18} /> Vision
                   </h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">{COMPANY_DATA.vision}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">{COMPANY_DATA.vision}</p>
                 </div>
-                <div className="p-8 border border-slate-100 rounded-2xl bg-slate-50">
-                  <h4 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                <div className="p-8 border border-white/5 rounded-2xl bg-white/5 backdrop-blur-sm">
+                  <h4 className="font-bold text-blue-400 mb-4 flex items-center gap-2">
                     <MapPin size={18} /> Location
                   </h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">{COMPANY_DATA.address}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">{COMPANY_DATA.address}</p>
                 </div>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function CorporateTemplate() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="py-24 bg-slate-900 text-white overflow-hidden">
+      <section id="projects" className="py-24 bg-gradient-to-tr from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
