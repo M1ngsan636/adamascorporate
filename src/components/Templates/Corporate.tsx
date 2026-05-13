@@ -1,17 +1,17 @@
 import { motion } from 'motion/react';
 import { COMPANY_DATA } from '../../constants';
-import { 
-  ShieldAlert, 
-  Cloud, 
-  CodeXml, 
-  Activity, 
-  Monitor, 
-  Users, 
-  Building2, 
-  Presentation, 
-  Video, 
-  Home, 
-  CheckCircle2, 
+import {
+  ShieldAlert,
+  Cloud,
+  CodeXml,
+  Activity,
+  Monitor,
+  Users,
+  Building2,
+  Presentation,
+  Video,
+  Home,
+  CheckCircle2,
   ArrowRight,
   Phone,
   Mail,
@@ -49,7 +49,7 @@ export default function CorporateTemplate() {
       <nav className="fixed top-0 w-full z-50 bg-white border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Adamas Tekno Logo" className="h-14 w-auto object-contain" />
+            <img src={logo} alt="Adamas Tekno Prosolusi" className="h-14 w-auto object-contain" />
           </div>
           <div className="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
             <a href="#solutions" className="hover:text-blue-700 transition-colors">Solutions</a>
@@ -66,14 +66,14 @@ export default function CorporateTemplate() {
       {/* Hero */}
       <section className="relative h-[90vh] flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
             className="w-full h-full object-cover brightness-50"
             alt="Corporate Environment"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-transparent" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -82,7 +82,7 @@ export default function CorporateTemplate() {
           >
             Excellence in AV & IT
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -91,7 +91,7 @@ export default function CorporateTemplate() {
             Engineering Future-Proof <br />
             Corporate Ecosystems
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -100,12 +100,12 @@ export default function CorporateTemplate() {
             Specializing in high-end Executive Meeting Rooms and mission-critical Command Centers with absolute reliability.
           </motion.p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20">
+            <a href="#solutions" className="bg-blue-600 text-white px-8 py-4 rounded font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 text-center">
               Explore Solutions
-            </button>
-            <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded font-bold hover:bg-white/20 transition-all">
+            </a>
+            <a href="#projects" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded font-bold hover:bg-white/20 transition-all text-center">
               View Our Work
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -121,11 +121,11 @@ export default function CorporateTemplate() {
             We deliver integrated technology infrastructures tailored to the specific needs of modern corporate, education, and public sectors.
           </p>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {CORPORATE_SERVICES.map((service, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ export default function CorporateTemplate() {
                 </div>
               </div>
             </div>
-            
+
             <div className="lg:w-1/2">
               <h2 className="text-3xl font-bold text-white mb-8">Our Strategic Mission</h2>
               <p className="text-slate-300 mb-12 leading-relaxed">
@@ -222,10 +222,10 @@ export default function CorporateTemplate() {
               View All Projects <ArrowRight size={16} className="ml-2" />
             </a>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {COMPANY_DATA.projects.map((project, i) => (
-              <motion.div 
+              <motion.div
                 key={project.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -262,10 +262,10 @@ export default function CorporateTemplate() {
               Read All Articles <ArrowRight size={16} className="ml-2" />
             </button>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {(COMPANY_DATA as any).news.map((item: any, i: number) => (
-              <motion.article 
+              <motion.article
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -274,10 +274,10 @@ export default function CorporateTemplate() {
                 className="flex flex-col group cursor-pointer"
               >
                 <div className="relative h-64 mb-6 rounded-2xl overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    alt={item.title} 
+                  <img
+                    src={item.image}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt={item.title}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-blue-900 text-[10px] font-bold uppercase tracking-widest">
@@ -339,7 +339,7 @@ export default function CorporateTemplate() {
               </div>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-8">Quick Links</h4>
             <ul className="space-y-4 text-sm font-medium">
@@ -350,14 +350,14 @@ export default function CorporateTemplate() {
               <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
             </ul>
           </div>
-          
+
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-8">Get in Touch</h4>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="text-blue-500"><MapPin size={20} /></div>
                 <div className="text-sm">
-                   {COMPANY_DATA.address}
+                  {COMPANY_DATA.address}
                 </div>
               </div>
               <div className="flex gap-4">
@@ -371,7 +371,7 @@ export default function CorporateTemplate() {
             </div>
           </div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto border-t border-slate-900 mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-bold uppercase tracking-widest">
           <span>&copy; 2024 PT Adamas Tekno Prosolusi. All Rights Reserved.</span>
           <div className="flex items-center gap-2">
