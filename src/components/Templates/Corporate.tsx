@@ -251,18 +251,18 @@ export default function CorporateTemplate() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-blue-900 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
-          <svg viewBox="0 0 100 100" className="w-full h-full text-white fill-current">
+      <section className="py-24 bg-transparent relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-blue-900 fill-current">
             <path d="M0,0 L100,0 L100,100 L0,100 Z" />
           </svg>
         </div>
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Modernize Your Infrastructure?</h2>
-          <p className="text-blue-100/70 mb-12 text-lg">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready to Modernize Your Infrastructure?</h2>
+          <p className="text-slate-600 mb-12 text-lg">
             Connect with our consultants to design a tailored solution that aligns with your organization's vision.
           </p>
-          <button className="bg-blue-400 text-blue-900 px-12 py-5 rounded font-bold text-lg hover:bg-white hover:text-blue-900 transition-all shadow-2xl shadow-blue-400/20">
+          <button className="bg-blue-600 text-white px-12 py-5 rounded font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-blue-600/20">
             Schedule a Consultation
           </button>
         </div>
