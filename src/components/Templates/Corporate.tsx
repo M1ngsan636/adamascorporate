@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { COMPANY_DATA } from '../../constants';
 import {
   ShieldAlert,
@@ -18,7 +19,11 @@ import {
   MapPin,
   Globe,
   ExternalLink,
-  Calendar
+  Calendar,
+  X,
+  Instagram,
+  Facebook,
+  Linkedin
 } from 'lucide-react';
 import GoogleMap from '../GoogleMap';
 import logo from '../../assets/logo.png';
@@ -43,6 +48,8 @@ const CORPORATE_SERVICES = [
 ];
 
 export default function CorporateTemplate() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="font-sans text-slate-900 bg-white selection:bg-blue-100">
       {/* Header */}
@@ -57,7 +64,10 @@ export default function CorporateTemplate() {
             <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
             <a href="#news" className="hover:text-blue-700 transition-colors">News</a>
           </div>
-          <button className="bg-blue-900 text-white px-6 py-2.5 rounded text-sm font-bold hover:bg-blue-800 transition-all shadow-md shadow-blue-900/10">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-blue-900 text-white px-6 py-2.5 rounded text-sm font-bold hover:bg-blue-800 transition-all shadow-md shadow-blue-900/10"
+          >
             Get a Quote
           </button>
         </div>
@@ -316,7 +326,10 @@ export default function CorporateTemplate() {
           <p className="text-slate-600 mb-12 text-lg">
             Connect with our consultants to design a tailored solution that aligns with your organization's vision.
           </p>
-          <button className="bg-blue-600 text-white px-12 py-5 rounded font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-blue-600/20">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-blue-600 text-white px-12 py-5 rounded font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-blue-600/20"
+          >
             Schedule a Consultation
           </button>
         </div>
@@ -380,6 +393,101 @@ export default function CorporateTemplate() {
           </div>
         </div>
       </footer>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsModalOpen(false)}
+              className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col lg:flex-row"
+            >
+              {/* Left Side: Info */}
+              <div className="lg:w-2/5 bg-blue-900 p-8 lg:p-12 text-white flex flex-col justify-between">
+                <div>
+                  <h2 className="text-3xl font-bold mb-4">Start Schedule</h2>
+                  <p className="text-blue-100/70 mb-12">
+                    Our professional and friendly customer officers are ready to help you.
+                  </p>
+                  
+                  <div className="space-y-8">
+                    <div>
+                      <h4 className="font-bold text-blue-400 text-xs uppercase tracking-widest mb-2">Company</h4>
+                      <p className="text-lg font-semibold">{COMPANY_DATA.name}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-blue-400 text-xs uppercase tracking-widest mb-2">Address</h4>
+                      <p className="text-sm text-blue-100/80 leading-relaxed">{COMPANY_DATA.address}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-blue-400 text-xs uppercase tracking-widest mb-2">Contact</h4>
+                      <p className="text-sm text-blue-100/80 leading-relaxed">
+                        Phone: +6281210000820<br />
+                        Email: info@adamastechno.com
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 mt-12">
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Instagram size={20} /></a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Facebook size={20} /></a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Linkedin size={20} /></a>
+                </div>
+              </div>
+
+              {/* Right Side: Form */}
+              <div className="lg:w-3/5 p-8 lg:p-12 overflow-y-auto">
+                <button 
+                  onClick={() => setIsModalOpen(false)}
+                  className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors"
+                >
+                  <X size={24} />
+                </button>
+                
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Full Name</label>
+                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="John Doe" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Company</label>
+                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="Acme Inc." />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone</label>
+                      <input type="tel" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="+62..." />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Email</label>
+                      <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="john@example.com" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Address</label>
+                    <textarea rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm resize-none" placeholder="Your office address..."></textarea>
+                  </div>
+                  <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 mt-4">
+                    Send Request
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
