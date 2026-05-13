@@ -269,7 +269,7 @@ export default function CorporateTemplate() {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 bg-slate-950 text-slate-400 px-6">
+      <footer className="py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-400 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="col-span-1 lg:col-span-1">
             <h3 className="text-white font-bold text-xl mb-8">Adamas Tekno</h3>
