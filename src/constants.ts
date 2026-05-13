@@ -4,6 +4,12 @@ export const COMPANY_DATA = {
   about: "Adamas Techno Prosolusi is a forward-thinking IT solutions provider specializing in B2C and B2B integration. We bridge the gap between complex technology and practical business needs, delivering scalable, secure, and intuitive digital ecosystems.",
   mission: "To deliver cutting-edge IT solutions that drive growth and innovation for our clients through technical excellence and strategic integration.",
   vision: "To be the preferred global partner for IT transformation, recognized for our commitment to quality, integrity, and future-ready solutions.",
+  story: {
+    title: "Our Story",
+    description: "PT Adamas Tekno Prosolusi is a company specializing in IT and audio-visual (AV) product solutions.",
+    longDescription: "PT Adamas Tekno Prosolusi operates as a system integrator, providing modern and effective technology solutions tailored to support clients’ IT infrastructure and audio-visual needs.\n\nCore Business:\nThe company focuses on IT solutions, Audio-visual systems integration, Technology consulting and implementation, and Smart collaboration and monitoring systems. Their services are supported by partnerships with several technology principals, enabling them to deliver reliable and up-to-date solutions.\n\nVision:\nTo become a trusted company for partners and customers.\n\nMission:\nPT Adamas Tekno Prosolusi aims to provide the latest and best technology solutions, deliver efficient and effective systems, offer excellent customer service, and maintain integrity and commitment in every project.\n\nCompany Values:\nThe company emphasizes Commitment, Integrity, and Trustworthiness.\n\nMain Solutions & Services:\nThe company provides integrated solutions for Executive meeting rooms, Small and medium meeting rooms, Auditoriums and divisible rooms, Command centers and monitoring rooms, Hybrid classrooms, Outdoor and indoor LED displays, CCTV surveillance systems, and Home theater systems.\n\nPositioning:\nPT Adamas Tekno Prosolusi positions itself as a trusted technology partner capable of delivering professional AV and IT integration solutions for corporate, education, security, and entertainment environments.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+  },
   services: [
     {
       id: "cloud-integration",

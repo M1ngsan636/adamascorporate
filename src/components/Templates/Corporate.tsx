@@ -219,7 +219,10 @@ export default function CorporateTemplate() {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-white text-blue-900 px-8 py-3.5 rounded font-bold hover:bg-blue-50 transition-all">
+                  <button 
+                    onClick={() => setSelectedDetail((COMPANY_DATA as any).story)}
+                    className="bg-white text-blue-900 px-8 py-3.5 rounded font-bold hover:bg-blue-50 transition-all"
+                  >
                     Read Our Story
                   </button>
                 </div>
@@ -585,7 +588,7 @@ export default function CorporateTemplate() {
                       {selectedDetail.description || selectedDetail.excerpt || selectedDetail.desc}
                     </p>
                     <div className="h-px bg-slate-100 w-full mb-8" />
-                    <p className="text-slate-500 leading-relaxed text-base">
+                    <p className="text-slate-500 leading-relaxed text-base whitespace-pre-line">
                       {selectedDetail.longDescription}
                     </p>
                   </div>
