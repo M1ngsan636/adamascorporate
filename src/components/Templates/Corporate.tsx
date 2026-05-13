@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import GoogleMap from '../GoogleMap';
 import logo from '../../assets/logo.png';
+import heroVideo from '../../assets/hero-video.mp4';
 
 const iconMap: Record<string, any> = {
   Cloud,
@@ -107,11 +108,15 @@ export default function CorporateTemplate() {
       {/* Hero */}
       <section className="relative h-[90vh] flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover brightness-50"
-            alt="Corporate Environment"
-          />
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-transparent" />
         </div>
 
