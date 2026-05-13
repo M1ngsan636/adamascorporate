@@ -37,18 +37,49 @@ const iconMap: Record<string, any> = {
 
 // Mocking additional services to match the corporate image look
 const CORPORATE_SERVICES = [
-  { title: "Executive Meeting Room", desc: "High-end boardroom systems with seamless integration for flawless communication.", icon: Users },
-  { title: "S-M Meeting Room", desc: "Scalable AV solutions for huddle spaces and medium-sized collaboration zones.", icon: Users },
-  { title: "Auditorium", desc: "Professional audio systems and large-format displays for impactful presentations.", icon: Building2 },
-  { title: "Command Center", desc: "Mission-critical visualization and control systems for 24/7 operations monitoring.", icon: Monitor },
-  { title: "Hybrid Classroom", desc: "Bridging the gap between physical and remote learning with interactive tech.", icon: Presentation },
-  { title: "Indoor/Outdoor LED", desc: "Vibrant high-resolution LED walls for dynamic digital signage and branding.", icon: Monitor },
+  { 
+    title: "Executive Meeting Room", 
+    desc: "High-end boardroom systems with seamless integration for flawless communication.", 
+    longDescription: "Our Executive Meeting Room solutions are the pinnacle of corporate communication technology. We integrate high-definition 4K displays, crystal-clear audio conferencing, and intuitive touch-panel controls into a seamless ecosystem. Each system is custom-engineered to ensure absolute reliability during critical board meetings, with features like automated lighting, shade control, and high-security wireless presentation systems.",
+    icon: Users 
+  },
+  { 
+    title: "S-M Meeting Room", 
+    desc: "Scalable AV solutions for huddle spaces and medium-sized collaboration zones.", 
+    longDescription: "Designed for agility, our Small to Medium Meeting Room solutions bring professional-grade collaboration to any space. We focus on 'plug-and-play' simplicity, allowing teams to start meetings instantly with their preferred platforms like Zoom, Teams, or Webex. Our systems include intelligent camera tracking and beamforming microphones to ensure every participant is seen and heard clearly.",
+    icon: Users 
+  },
+  { 
+    title: "Auditorium", 
+    desc: "Professional audio systems and large-format displays for impactful presentations.", 
+    longDescription: "For large-scale venues, we deliver powerful AV infrastructures that command attention. Our auditorium solutions include cinema-grade projection or large LED walls, sophisticated line-array audio systems for uniform sound distribution, and professional lighting control. We also provide integrated streaming and recording capabilities for hybrid events and town hall meetings.",
+    icon: Building2 
+  },
+  { 
+    title: "Command Center", 
+    desc: "Mission-critical visualization and control systems for 24/7 operations monitoring.", 
+    longDescription: "Adamas Tekno specializes in mission-critical Command and Control Centers (NOC/SOC). Our solutions feature high-availability video walls with multi-window processing, allowing operators to visualize complex data streams simultaneously. We prioritize ergonomic design and 24/7 reliability, ensuring that your monitoring team has the tools they need for rapid decision-making in high-pressure environments.",
+    icon: Monitor 
+  },
+  { 
+    title: "Hybrid Classroom", 
+    desc: "Bridging the gap between physical and remote learning with interactive tech.", 
+    longDescription: "Our Hybrid Classroom solutions are transforming the educational experience. We combine interactive flat panels with AI-driven cameras that follow the instructor, creating an immersive environment for both in-person and remote students. Integrated lecture capture systems allow for easy content review, while professional audio ensures that remote learners feel just as connected as those in the room.",
+    icon: Presentation 
+  },
+  { 
+    title: "Indoor/Outdoor LED", 
+    desc: "Vibrant high-resolution LED walls for dynamic digital signage and branding.", 
+    longDescription: "We provide state-of-the-art LED display solutions for both indoor branding and outdoor advertising. Our high-refresh-rate panels offer stunning clarity even in direct sunlight. From curved lobby displays that create a 'wow' factor to massive outdoor billboards, we handle the entire project from structural engineering and panel installation to content management system setup.",
+    icon: Monitor 
+  },
   { title: "CCTV", desc: "Advanced surveillance and security network systems for total infrastructure protection.", icon: Video },
   { title: "Home Theater", desc: "Immersive cinematic experiences for luxury residential properties.", icon: Home },
 ];
 
 export default function CorporateTemplate() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDetail, setSelectedDetail] = useState<any>(null);
 
   return (
     <div className="font-sans text-slate-900 bg-white selection:bg-blue-100">
@@ -148,7 +179,10 @@ export default function CorporateTemplate() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-700">{service.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
-                <div className="flex items-center text-blue-600 font-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                <div 
+                  onClick={() => setSelectedDetail(service)}
+                  className="flex items-center text-blue-600 font-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+                >
                   Learn More <ArrowRight size={14} className="ml-2" />
                 </div>
               </motion.div>
@@ -250,7 +284,10 @@ export default function CorporateTemplate() {
                   <p className="text-slate-300 text-sm mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {project.description}
                   </p>
-                  <button className="w-full py-4 border border-white/20 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => setSelectedDetail(project)}
+                    className="w-full py-4 border border-white/20 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+                  >
                     Read More <ExternalLink size={16} />
                   </button>
                 </div>
@@ -305,7 +342,10 @@ export default function CorporateTemplate() {
                 <p className="text-slate-500 text-sm leading-relaxed mb-6">
                   {item.excerpt}
                 </p>
-                <div className="mt-auto flex items-center text-blue-600 font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+                <div 
+                  onClick={() => setSelectedDetail(item)}
+                  className="mt-auto flex items-center text-blue-600 font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform"
+                >
                   Read More <ArrowRight size={14} className="ml-2" />
                 </div>
               </motion.article>
@@ -483,6 +523,91 @@ export default function CorporateTemplate() {
                     Send Request
                   </button>
                 </form>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Detail Modal */}
+      <AnimatePresence>
+        {selectedDetail && (
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedDetail(null)}
+              className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
+            />
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              className="relative bg-white rounded-3xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden"
+            >
+              <button 
+                onClick={() => setSelectedDetail(null)}
+                className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-slate-600 hover:bg-black/20 transition-all"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="overflow-y-auto max-h-[85vh]">
+                {selectedDetail.image && (
+                  <div className="h-64 sm:h-80 relative">
+                    <img src={selectedDetail.image} className="w-full h-full object-cover" alt={selectedDetail.title} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                  </div>
+                )}
+                
+                <div className={`p-8 sm:p-12 ${!selectedDetail.image ? 'pt-16' : ''}`}>
+                  <div className="flex items-center gap-3 mb-6">
+                    {selectedDetail.category && (
+                      <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest">
+                        {selectedDetail.category}
+                      </span>
+                    )}
+                    {selectedDetail.date && (
+                      <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                        <Calendar size={12} />
+                        {selectedDetail.date}
+                      </div>
+                    )}
+                  </div>
+                  
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8 leading-tight">
+                    {selectedDetail.title}
+                  </h2>
+                  
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-lg text-slate-600 leading-relaxed mb-8 font-medium">
+                      {selectedDetail.description || selectedDetail.excerpt || selectedDetail.desc}
+                    </p>
+                    <div className="h-px bg-slate-100 w-full mb-8" />
+                    <p className="text-slate-500 leading-relaxed text-base">
+                      {selectedDetail.longDescription}
+                    </p>
+                  </div>
+
+                  <div className="mt-12 flex flex-wrap gap-4">
+                    <button 
+                      onClick={() => {
+                        setSelectedDetail(null);
+                        setIsModalOpen(true);
+                      }}
+                      className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
+                    >
+                      Inquire About This
+                    </button>
+                    <button 
+                      onClick={() => setSelectedDetail(null)}
+                      className="px-8 py-4 rounded-xl font-bold border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
