@@ -21,6 +21,7 @@ import {
   Calendar
 } from 'lucide-react';
 import GoogleMap from '../GoogleMap';
+import logo from '../../assets/logo.png';
 
 const iconMap: Record<string, any> = {
   Cloud,
@@ -48,9 +49,7 @@ export default function CorporateTemplate() {
       <nav className="fixed top-0 w-full z-50 bg-white border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-2xl tracking-tight text-blue-900">
-              Adamas <span className="text-slate-500 font-normal">Tekno</span>
-            </span>
+            <img src={logo} alt="Adamas Tekno Logo" className="h-14 w-auto object-contain" />
           </div>
           <div className="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
             <a href="#solutions" className="hover:text-blue-700 transition-colors">Solutions</a>
@@ -327,7 +326,7 @@ export default function CorporateTemplate() {
       <footer className="py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-400 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="col-span-1 lg:col-span-1">
-            <h3 className="text-white font-bold text-xl mb-8">Adamas Tekno</h3>
+            <img src={logo} alt="Adamas Tekno Logo" className="h-16 w-auto object-contain mb-8 brightness-0 invert" />
             <p className="text-sm leading-relaxed mb-8">
               Empowering business growth through integrated technical excellence.
             </p>
