@@ -64,7 +64,7 @@ export default function CorporateTemplate() {
             <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
             <a href="#news" className="hover:text-blue-700 transition-colors">News</a>
           </div>
-          <button 
+          <button
             onClick={() => setIsModalOpen(true)}
             className="bg-blue-900 text-white px-6 py-2.5 rounded text-sm font-bold hover:bg-blue-800 transition-all shadow-md shadow-blue-900/10"
           >
@@ -326,7 +326,7 @@ export default function CorporateTemplate() {
           <p className="text-slate-600 mb-12 text-lg">
             Connect with our consultants to design a tailored solution that aligns with your organization's vision.
           </p>
-          <button 
+          <button
             onClick={() => setIsModalOpen(true)}
             className="bg-blue-600 text-white px-12 py-5 rounded font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-blue-600/20"
           >
@@ -398,14 +398,14 @@ export default function CorporateTemplate() {
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsModalOpen(false)}
               className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm"
             />
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -418,7 +418,7 @@ export default function CorporateTemplate() {
                   <p className="text-blue-100/70 mb-12">
                     Our professional and friendly customer officers are ready to help you.
                   </p>
-                  
+
                   <div className="space-y-8">
                     <div>
                       <h4 className="font-bold text-blue-400 text-xs uppercase tracking-widest mb-2">Company</h4>
@@ -447,22 +447,22 @@ export default function CorporateTemplate() {
 
               {/* Right Side: Form */}
               <div className="lg:w-3/5 p-8 lg:p-12 overflow-y-auto">
-                <button 
+                <button
                   onClick={() => setIsModalOpen(false)}
                   className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors"
                 >
                   <X size={24} />
                 </button>
-                
+
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Full Name</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="John Doe" />
+                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Company</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="Acme Inc." />
+                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -472,7 +472,7 @@ export default function CorporateTemplate() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Email</label>
-                      <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="john@example.com" />
+                      <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
                     </div>
                   </div>
                   <div className="space-y-2">
