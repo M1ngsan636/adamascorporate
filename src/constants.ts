@@ -1,6 +1,4 @@
-import { CompanyData } from "./types";
-
-export const COMPANY_DATA: CompanyData = {
+export const COMPANY_DATA = {
   name: "Adamas Techno Prosolusi",
   tagline: "Empowering Businesses through Precision IT Solutions & Seamless Integration",
   about: "Adamas Techno Prosolusi is a forward-thinking IT solutions provider specializing in B2C and B2B integration. We bridge the gap between complex technology and practical business needs, delivering scalable, secure, and intuitive digital ecosystems.",
