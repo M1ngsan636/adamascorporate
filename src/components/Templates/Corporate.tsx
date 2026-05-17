@@ -370,8 +370,8 @@ export default function CorporateTemplate() {
           </svg>
         </div>
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Ready to Modernize Your Infrastructure?</h2>
-          <p className="text-slate-600 mb-12 text-lg">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Modernize Your Infrastructure?</h2>
+          <p className="text-slate-300 mb-12 text-lg">
             Connect with our consultants to design a tailored solution that aligns with your organization's vision.
           </p>
           <button
