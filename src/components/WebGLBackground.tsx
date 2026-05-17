@@ -36,45 +36,6 @@ function StarField({ count = 2000, color = "#3b82f6" }) {
   );
 }
 
-function FloatingShapes() {
-  const ref = useRef<THREE.Group>(null!);
-
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime();
-    if (ref.current) {
-      ref.current.rotation.y = t * 0.1;
-      ref.current.children.forEach((child, i) => {
-        child.position.y += Math.sin(t + i) * 0.002;
-      });
-    }
-  });
-
-  const shapes = useMemo(() => {
-    const arr = [];
-    for (let i = 0; i < 20; i++) {
-      const x = (Math.random() - 0.5) * 30;
-      const y = (Math.random() - 0.5) * 30;
-      const z = (Math.random() - 0.5) * 30;
-      arr.push({ x, y, z });
-    }
-    return arr;
-  }, []);
-
-  return (
-    <group ref={ref}>
-      {shapes.map((pos, i) => (
-        <mesh key={i} position={[pos.x, pos.y, pos.z]}>
-          <boxGeometry args={[0.5, 0.5, 0.5]} />
-          <meshStandardMaterial 
-            color='#444' 
-            opacity={0.3}
-            transparent
-          />
-        </mesh>
-      ))}
-    </group>
-  );
-}
 
 export default function WebGLBackground() {
   return (
@@ -83,7 +44,6 @@ export default function WebGLBackground() {
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <StarField color="#3b82f6" />
-        <FloatingShapes />
       </Canvas>
     </div>
   );
