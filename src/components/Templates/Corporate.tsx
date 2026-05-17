@@ -83,18 +83,18 @@ export default function CorporateTemplate() {
   const [selectedDetail, setSelectedDetail] = useState<any>(null);
 
   return (
-    <div className="font-sans text-slate-900 bg-white selection:bg-blue-100">
+    <div className="font-sans text-slate-300 bg-transparent selection:bg-blue-900 selection:text-white">
       {/* Header */}
-      <nav className="fixed top-0 w-full z-50 bg-white border-b border-slate-100 shadow-sm">
+      <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Adamas Tekno Prosolusi" className="h-14 w-auto object-contain" />
+            <img src={logo} alt="Adamas Tekno Prosolusi" className="h-14 w-auto object-contain brightness-0 invert" />
           </div>
-          <div className="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
-            <a href="#solutions" className="hover:text-blue-700 transition-colors">Solutions</a>
-            <a href="#projects" className="hover:text-blue-700 transition-colors">Projects</a>
-            <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
-            <a href="#news" className="hover:text-blue-700 transition-colors">News</a>
+          <div className="hidden md:flex gap-8 text-sm font-semibold text-slate-300">
+            <a href="#solutions" className="hover:text-white transition-colors">Solutions</a>
+            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+            <a href="#about" className="hover:text-white transition-colors">About Us</a>
+            <a href="#news" className="hover:text-white transition-colors">News</a>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -157,13 +157,13 @@ export default function CorporateTemplate() {
       </section>
 
       {/* Solutions Grid */}
-      <section id="solutions" className="py-24 bg-slate-50">
+      <section id="solutions" className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4 relative inline-block">
+          <h2 className="text-3xl font-bold text-white mb-4 relative inline-block">
             Our Specialized Solutions
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-blue-600" />
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto mt-6">
+          <p className="text-slate-400 max-w-2xl mx-auto mt-6">
             We deliver integrated technology infrastructures tailored to the specific needs of modern corporate, education, and public sectors.
           </p>
         </div>
@@ -177,16 +177,16 @@ export default function CorporateTemplate() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group cursor-pointer"
+                className="bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-xl hover:border-blue-500/50 backdrop-blur-sm transition-all group cursor-pointer"
               >
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <service.icon size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-700">{service.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-400">{service.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6">{service.desc}</p>
                 <div 
                   onClick={() => setSelectedDetail(service)}
-                  className="flex items-center text-blue-600 font-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+                  className="flex items-center text-blue-400 font-bold text-xs uppercase tracking-wider group-hover:translate-x-2 transition-transform"
                 >
                   Learn More <ArrowRight size={14} className="ml-2" />
                 </div>
@@ -306,14 +306,14 @@ export default function CorporateTemplate() {
       </section>
 
       {/* News Section */}
-      <section id="news" className="py-24 bg-white">
+      <section id="news" className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">Latest News & Insights</h2>
-              <p className="text-slate-500">Stay updated with our latest projects and industry thoughts.</p>
+              <h2 className="text-4xl font-bold text-white mb-4">Latest News & Insights</h2>
+              <p className="text-slate-400">Stay updated with our latest projects and industry thoughts.</p>
             </div>
-            <button className="hidden md:flex items-center text-blue-600 font-bold hover:text-blue-700 transition-colors uppercase tracking-widest text-sm">
+            <button className="hidden md:flex items-center text-blue-400 font-bold hover:text-blue-300 transition-colors uppercase tracking-widest text-sm">
               Read All Articles <ArrowRight size={16} className="ml-2" />
             </button>
           </div>
@@ -335,7 +335,7 @@ export default function CorporateTemplate() {
                     alt={item.title}
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-blue-900 text-[10px] font-bold uppercase tracking-widest">
+                    <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-sm text-white border border-white/10 text-[10px] font-bold uppercase tracking-widest">
                       {item.category}
                     </span>
                   </div>
@@ -344,15 +344,15 @@ export default function CorporateTemplate() {
                   <Calendar size={14} />
                   <span>{item.date}</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                <p className="text-slate-400 text-sm leading-relaxed mb-6">
                   {item.excerpt}
                 </p>
                 <div 
                   onClick={() => setSelectedDetail(item)}
-                  className="mt-auto flex items-center text-blue-600 font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform"
+                  className="mt-auto flex items-center text-blue-400 font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform"
                 >
                   Read More <ArrowRight size={14} className="ml-2" />
                 </div>
@@ -457,10 +457,10 @@ export default function CorporateTemplate() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col lg:flex-row"
+              className="relative bg-slate-900 border border-white/10 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col lg:flex-row"
             >
               {/* Left Side: Info */}
-              <div className="lg:w-2/5 bg-blue-900 p-8 lg:p-12 text-white flex flex-col justify-between">
+              <div className="lg:w-2/5 bg-slate-800/50 p-8 lg:p-12 text-white flex flex-col justify-between border-r border-white/5">
                 <div>
                   <h2 className="text-3xl font-bold mb-4">Start Schedule</h2>
                   <p className="text-blue-100/70 mb-12">
@@ -487,9 +487,9 @@ export default function CorporateTemplate() {
                 </div>
 
                 <div className="flex gap-4 mt-12">
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Instagram size={20} /></a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Facebook size={20} /></a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Linkedin size={20} /></a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Instagram size={20} /></a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Facebook size={20} /></a>
+                  <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-blue-900 transition-all"><Linkedin size={20} /></a>
                 </div>
               </div>
 
@@ -497,7 +497,7 @@ export default function CorporateTemplate() {
               <div className="lg:w-3/5 p-8 lg:p-12 overflow-y-auto">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors"
+                  className="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors"
                 >
                   <X size={24} />
                 </button>
@@ -505,29 +505,29 @@ export default function CorporateTemplate() {
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Full Name</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
+                      <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Full Name</label>
+                      <input type="text" className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm text-white" placeholder="" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Company</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
+                      <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Company</label>
+                      <input type="text" className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm text-white" placeholder="" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone</label>
-                      <input type="tel" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
+                      <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Phone</label>
+                      <input type="tel" className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm text-white" placeholder="" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Email</label>
-                      <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm" placeholder="" />
+                      <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Email</label>
+                      <input type="email" className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm text-white" placeholder="" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Address</label>
-                    <textarea rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm resize-none" placeholder=""></textarea>
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Address</label>
+                    <textarea rows={3} className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all text-sm resize-none text-white" placeholder=""></textarea>
                   </div>
-                  <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 mt-4">
+                  <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 mt-4">
                     Send Request
                   </button>
                 </form>
@@ -548,15 +548,15 @@ export default function CorporateTemplate() {
               onClick={() => setSelectedDetail(null)}
               className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
             />
-            <motion.div 
+              <motion.div 
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 50 }}
-              className="relative bg-white rounded-3xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden"
+              className="relative bg-slate-900 border border-white/10 rounded-3xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden"
             >
               <button 
                 onClick={() => setSelectedDetail(null)}
-                className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-black/10 flex items-center justify-center text-slate-600 hover:bg-black/20 transition-all"
+                className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/50 transition-all border border-white/10"
               >
                 <X size={20} />
               </button>
@@ -565,14 +565,14 @@ export default function CorporateTemplate() {
                 {selectedDetail.image && (
                   <div className="h-64 sm:h-80 relative">
                     <img src={selectedDetail.image} className="w-full h-full object-cover" alt={selectedDetail.title} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   </div>
                 )}
                 
                 <div className={`p-8 sm:p-12 ${!selectedDetail.image ? 'pt-16' : ''}`}>
                   <div className="flex items-center gap-3 mb-6">
                     {selectedDetail.category && (
-                      <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest">
+                      <span className="px-3 py-1 rounded-full bg-blue-900/50 border border-blue-400/30 text-blue-300 text-[10px] font-bold uppercase tracking-widest">
                         {selectedDetail.category}
                       </span>
                     )}
@@ -584,16 +584,16 @@ export default function CorporateTemplate() {
                     )}
                   </div>
                   
-                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8 leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 leading-tight">
                     {selectedDetail.title}
                   </h2>
                   
                   <div className="prose prose-slate max-w-none">
-                    <p className="text-lg text-slate-600 leading-relaxed mb-8 font-medium">
+                    <p className="text-lg text-slate-300 leading-relaxed mb-8 font-medium">
                       {selectedDetail.description || selectedDetail.excerpt || selectedDetail.desc}
                     </p>
-                    <div className="h-px bg-slate-100 w-full mb-8" />
-                    <p className="text-slate-500 leading-relaxed text-base whitespace-pre-line">
+                    <div className="h-px bg-white/10 w-full mb-8" />
+                    <p className="text-slate-400 leading-relaxed text-base whitespace-pre-line">
                       {selectedDetail.longDescription}
                     </p>
                   </div>
@@ -604,13 +604,13 @@ export default function CorporateTemplate() {
                         setSelectedDetail(null);
                         setIsModalOpen(true);
                       }}
-                      className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
+                      className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20"
                     >
                       Inquire About This
                     </button>
                     <button 
                       onClick={() => setSelectedDetail(null)}
-                      className="px-8 py-4 rounded-xl font-bold border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all"
+                      className="px-8 py-4 rounded-xl font-bold border border-white/20 text-slate-300 hover:bg-white/10 transition-all"
                     >
                       Close
                     </button>

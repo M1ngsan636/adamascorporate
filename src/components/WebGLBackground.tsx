@@ -78,7 +78,7 @@ function FloatingShapes() {
 
 export default function WebGLBackground() {
   return (
-    <div className="fixed inset-0 -z-10 bg-white transition-colors duration-1000">
+    <div className="fixed inset-0 -z-10 bg-gradient-to-tr from-slate-950 via-blue-950 to-slate-900 transition-colors duration-1000">
       <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
