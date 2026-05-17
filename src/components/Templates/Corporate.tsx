@@ -86,16 +86,16 @@ export default function CorporateTemplate() {
   return (
     <div className="font-sans text-slate-300 bg-transparent selection:bg-blue-900 selection:text-white">
       {/* Header */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10 shadow-sm">
+      <nav className="fixed top-0 w-full z-50 bg-white border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Adamas Tekno Prosolusi" className="h-14 w-auto object-contain brightness-0 invert" />
+            <img src={logo} alt="Adamas Tekno Prosolusi" className="h-14 w-auto object-contain" />
           </div>
-          <div className="hidden md:flex gap-8 text-sm font-semibold text-slate-300">
-            <a href="#solutions" className="hover:text-white transition-colors">Solutions</a>
-            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#about" className="hover:text-white transition-colors">About Us</a>
-            <a href="#news" className="hover:text-white transition-colors">News</a>
+          <div className="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+            <a href="#solutions" className="hover:text-blue-700 transition-colors">Solutions</a>
+            <a href="#projects" className="hover:text-blue-700 transition-colors">Projects</a>
+            <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
+            <a href="#news" className="hover:text-blue-700 transition-colors">News</a>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
