@@ -28,7 +28,7 @@ import {
 import GoogleMap from '../GoogleMap';
 import logo from '../../assets/logo.png';
 import heroVideo from '../../assets/hero-video.mp4';
-import aboutUsImage from '../../assets/about-us.png';
+import aboutUsImage from '../../assets/about-us.jpg';
 
 const iconMap: Record<string, any> = {
   Cloud,
@@ -202,8 +202,9 @@ export default function CorporateTemplate() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2 relative">
-              <div className="bg-blue-900 rounded-3xl p-12 relative overflow-hidden">
-                <img src={aboutUsImage} className="absolute inset-0 opacity-20 object-cover" alt="Building" />
+              <div className="bg-blue-900 rounded-3xl p-12 relative overflow-hidden shadow-2xl shadow-blue-900/20">
+                <img src={aboutUsImage} className="absolute inset-0 opacity-40 object-cover w-full h-full mix-blend-overlay" alt="Boardroom" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                 <div className="relative z-10">
                   <span className="text-blue-400 font-bold text-sm uppercase tracking-widest block mb-6">About Adamas Tekno</span>
                   <h2 className="text-4xl font-bold text-white mb-8 leading-tight">Leading with Integrity, Delivering with Precision</h2>

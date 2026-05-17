@@ -1,4 +1,4 @@
-import aboutUsImage from './assets/about-us.png';
+import aboutUsImage from './assets/about-us.jpg';
 
 export const COMPANY_DATA = {
   name: "Adamas Techno Prosolusi",
